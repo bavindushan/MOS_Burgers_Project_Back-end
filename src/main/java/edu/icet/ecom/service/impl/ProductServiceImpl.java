@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,6 +26,21 @@ public class ProductServiceImpl implements ProductService {
         product.setItemCode(generateId(product.getCategoryId()));
         repository.save(mapper.map(product, ProductEntity.class));
     }
+
+    @Override
+    public List<Product> getAll() {
+        List<Product> list = new ArrayList<>();
+        List<ProductEntity> all = repository.findAll();
+
+        all.forEach(productEntity -> list.add(mapper.map(productEntity, Product.class)));
+        return list;
+    }
+
+    @Override
+    public void updateProduct(Product product) {
+        repository.save(mapper.map(product, ProductEntity.class));
+    }
+
     private String generateId(String categoryID){
         Optional<ProductEntity> lastProduct = repository.findTopByOrderByItemCodeDesc();
 
