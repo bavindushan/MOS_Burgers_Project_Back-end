@@ -12,4 +12,6 @@ public interface ProductService {
     void updateProduct(Product product);
 
     void deleteProduct(String itemCode);
+
+    Product searchById(String itemCode);
 }

@@ -46,6 +46,12 @@ public class ProductServiceImpl implements ProductService {
         repository.deleteById(itemCode);
     }
 
+    @Override
+    public Product searchById(String itemCode) {
+        return mapper.map(repository.findById(itemCode), Product.class);
+
+    }
+
     private String generateId(String categoryID){
         Optional<ProductEntity> lastProduct = repository.findTopByOrderByItemCodeDesc();
 
