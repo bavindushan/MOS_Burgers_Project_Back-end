@@ -14,4 +14,6 @@ public interface ProductService {
     void deleteProduct(String itemCode);
 
     Product searchById(String itemCode);
+
+    Product searchByName(String name);
 }

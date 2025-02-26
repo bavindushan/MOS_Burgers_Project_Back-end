@@ -52,6 +52,13 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public Product searchByName(String name) {
+        Product map = mapper.map(repository.findByName(name), Product.class);
+        System.out.println(map);
+        return map;
+    }
+
     private String generateId(String categoryID){
         Optional<ProductEntity> lastProduct = repository.findTopByOrderByItemCodeDesc();
 

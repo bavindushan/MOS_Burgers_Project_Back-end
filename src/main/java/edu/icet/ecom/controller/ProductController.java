@@ -41,4 +41,9 @@ public class ProductController {
     public Product searchById(@PathVariable String itemCode){
         return service.searchById(itemCode);
     }
+
+    @GetMapping("/searchByName/{name}")
+    public Product searchByName(@PathVariable String name){
+        return service.searchByName(name);
+    }
 }
