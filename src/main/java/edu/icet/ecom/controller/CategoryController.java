@@ -17,4 +17,9 @@ public class CategoryController {
     public void addCategory(@RequestBody Category category){
         service.addCategory(category);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteCategoty(@PathVariable String id){
+        service.deleteCategoty(id);
+    }
 }

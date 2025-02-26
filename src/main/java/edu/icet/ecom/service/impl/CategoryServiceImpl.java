@@ -19,4 +19,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void addCategory(Category category) {
         repository.save(mapper.map(category, CategoryEntity.class));
     }
+
+    @Override
+    public void deleteCategoty(String id) {
+        repository.deleteById(id);
+    }
 }
