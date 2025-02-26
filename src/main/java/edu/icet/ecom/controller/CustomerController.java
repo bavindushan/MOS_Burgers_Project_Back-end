@@ -34,4 +34,10 @@ public class CustomerController {
     public void updateCustomer(@RequestBody Customer customer){
         service.updateCustomer(customer);
     }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteCustomer(@PathVariable Integer id){
+        service.deleteCustomer(id);
+    }
 }

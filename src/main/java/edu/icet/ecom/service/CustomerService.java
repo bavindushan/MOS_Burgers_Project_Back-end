@@ -10,4 +10,6 @@ public interface CustomerService {
     List<Customer> getAll();
 
     void updateCustomer(Customer customer);
+
+    void deleteCustomer(Integer id);
 }
