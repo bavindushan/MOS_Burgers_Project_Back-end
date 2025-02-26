@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin")
 @RequiredArgsConstructor
@@ -20,4 +22,13 @@ public class AdminController {
         service.addAdmin(admin);
     }
 
+    @PutMapping("/update")
+    public void updateAdmin(@RequestBody Admin admin){
+        service.updateAdmin(admin);
+    }
+
+    @GetMapping("/getAll")
+    public List<Admin> getAll(){
+        return service.getAll();
+    }
 }
