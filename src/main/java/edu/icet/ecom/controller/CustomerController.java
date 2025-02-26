@@ -40,4 +40,10 @@ public class CustomerController {
     public void deleteCustomer(@PathVariable Integer id){
         service.deleteCustomer(id);
     }
+
+    @GetMapping("/search/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Customer searchCustomerByID(@PathVariable Integer id){
+        return service.searchCustomerById(id);
+    }
 }

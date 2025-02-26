@@ -42,4 +42,9 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteCustomer(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Customer searchCustomerById(Integer id) {
+        return mapper.map(repository.findById(id), Customer.class);
+    }
 }
