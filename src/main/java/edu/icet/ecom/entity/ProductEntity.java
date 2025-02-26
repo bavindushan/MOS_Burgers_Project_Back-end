@@ -18,6 +18,8 @@ public class ProductEntity {
 
     @Column(unique = true)
     private String name;
+//    @ManyToOne
+//    @JoinColumn(name = "categoryId", referencedColumnName = "id",nullable = false)
     private String categoryId;
     private Double price;
     private Double discount;
