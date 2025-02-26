@@ -20,4 +20,14 @@ public class Customer {
     private String email;
     private String phoneNumber;
     private String additionalInfo;
+
+//    "customerID",
+//    "firstName",
+//    "lastName",
+//    "occupation",
+//    "gender",
+//    "location",
+//    "email",
+//    "phoneNumber",
+//    "additionalInfo"
 }
