@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/customer")
 @RequiredArgsConstructor
+@CrossOrigin
 public class CustomerController {
 
     final CustomerService service;
@@ -26,5 +27,11 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.OK)
     public List<Customer> getAll(){
         return service.getAll();
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateCustomer(@RequestBody Customer customer){
+        service.updateCustomer(customer);
     }
 }
