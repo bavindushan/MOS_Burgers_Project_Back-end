@@ -45,4 +45,9 @@ public class CustomerController {
     public Customer searchCustomerByID(@PathVariable Integer id){
         return service.searchCustomerById(id);
     }
+
+    @GetMapping("/search-by-number/{number}")
+    public Customer searchByNumber(@PathVariable String number){
+        return service.searchByNumber(number);
+    }
 }

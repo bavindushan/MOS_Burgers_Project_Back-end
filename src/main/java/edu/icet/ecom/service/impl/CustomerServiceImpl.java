@@ -47,4 +47,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer searchCustomerById(Integer id) {
         return mapper.map(repository.findById(id), Customer.class);
     }
+
+    @Override
+    public Customer searchByNumber(String number) {
+        return mapper.map(repository.findByPhoneNumber(number),Customer.class);
+    }
 }

@@ -24,6 +24,8 @@ public class CustomerEntity {
     private String gender;
     private String location;
     private String email;
+
+    @Column(unique = true,nullable = false)
     private String phoneNumber;
     private String additionalInfo;
 }
