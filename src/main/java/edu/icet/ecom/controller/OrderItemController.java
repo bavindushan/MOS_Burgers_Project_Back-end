@@ -29,4 +29,14 @@ public class OrderItemController {
     public void updateOrderItem(@RequestBody OrderItem orderItem){
         service.updateOrderItem(orderItem);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteOrderItem(@PathVariable Integer id){
+        service.deleteOrderItem(id);
+    }
+
+    @GetMapping("/search-by-id/{id}")
+    public OrderItem searchById(@PathVariable Integer id){
+        return service.searchById(id);
+    }
 }

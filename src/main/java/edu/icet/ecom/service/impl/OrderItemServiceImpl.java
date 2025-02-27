@@ -36,4 +36,14 @@ public class OrderItemServiceImpl implements OrderItemService {
     public void updateOrderItem(OrderItem orderItem) {
         repository.save(mapper.map(orderItem, OrderItemEntity.class));
     }
+
+    @Override
+    public void deleteOrderItem(Integer id) {
+        repository.deleteById(id);
+    }
+
+    @Override
+    public OrderItem searchById(Integer id) {
+        return mapper.map(repository.findById(id), OrderItem.class);
+    }
 }

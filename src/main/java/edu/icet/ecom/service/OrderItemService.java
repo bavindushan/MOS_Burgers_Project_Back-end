@@ -10,4 +10,8 @@ public interface OrderItemService {
     List<OrderItem> getAll();
 
     void updateOrderItem(OrderItem orderItem);
+
+    void deleteOrderItem(Integer id);
+
+    OrderItem searchById(Integer id);
 }
