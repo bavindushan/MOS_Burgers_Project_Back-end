@@ -37,4 +37,9 @@ public class OrderController {
     public void deleteOrder(@PathVariable Integer id){
         service.deleteOrder(id);
     }
+
+    @GetMapping("/searchById/{id}")
+    public Order searchById(@PathVariable Integer id){
+        return service.searchById(id);
+    }
 }

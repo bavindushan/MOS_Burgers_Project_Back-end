@@ -40,4 +40,10 @@ public class OrderServiceImpl implements OrderService {
     public void deleteOrder(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public Order searchById(Integer id) {
+        return mapper.map(repository.findById(id),Order.class);
+    }
+
 }
