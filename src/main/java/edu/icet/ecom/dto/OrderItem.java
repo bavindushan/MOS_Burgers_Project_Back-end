@@ -9,11 +9,18 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Product {
-    private String id;
-    private String name;
-    private String categoryId;
+public class OrderItem {
+    private Integer id;
+    private Integer orderId;
+    private String productId;
+    private Integer qty;
     private Double price;
     private Double discount;
-    private String img;
+
+//    "id",
+//    "orderId",
+//    "itemCode",
+//    "qty",
+//    "price",
+//    "discount"
 }

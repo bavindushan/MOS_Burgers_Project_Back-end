@@ -14,7 +14,7 @@ import lombok.ToString;
 @Table(name = "product")
 public class ProductEntity {
     @Id
-    private String itemCode;
+    private String id;
 
     @Column(unique = true)
     private String name;

@@ -10,7 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Customer {
-    private Integer customerID; // (INT, Primary Key, Auto Increment)
+    private Integer id; // (INT, Primary Key, Auto Increment)
     //private String img;
     private String firstName;
     private String lastName;

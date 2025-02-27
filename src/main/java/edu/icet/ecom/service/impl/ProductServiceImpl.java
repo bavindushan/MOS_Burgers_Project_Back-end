@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(Product product) {
-        product.setItemCode(generateId(product.getCategoryId()));
+        product.setId(generateId(product.getCategoryId()));
         repository.save(mapper.map(product, ProductEntity.class));
     }
 
@@ -60,10 +60,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private String generateId(String categoryID){
-        Optional<ProductEntity> lastProduct = repository.findTopByOrderByItemCodeDesc();
+        Optional<ProductEntity> lastProduct = repository.findTopByOrderByIdDesc();
 
         if (lastProduct.isPresent()){
-            String itemCode = lastProduct.get().getItemCode();
+            String itemCode = lastProduct.get().getId();
             int num = Integer.parseInt(itemCode.substring(1))+1;
             return String.format("%s%03d", categoryID, num);
 

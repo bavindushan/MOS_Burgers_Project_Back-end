@@ -18,6 +18,7 @@ import lombok.ToString;
 public class CategoryEntity {
     @Id
     private String id;
+
     @Column(unique = true)
     private String name;
 }

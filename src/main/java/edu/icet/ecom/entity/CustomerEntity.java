@@ -16,8 +16,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customerID;
-    //private String img;
+    private Integer id;
+
     private String firstName;
     private String lastName;
     private String occupation;
