@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
@@ -43,7 +44,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order searchById(Integer id) {
-        return mapper.map(repository.findById(id),Order.class);
+        return repository.findById(id)
+                .map(orderEntity -> mapper.map(orderEntity,Order.class))
+                .orElse(null);
     }
+
 
 }

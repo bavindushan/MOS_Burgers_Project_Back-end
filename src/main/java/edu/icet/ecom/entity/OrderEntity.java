@@ -20,7 +20,7 @@ public class OrderEntity {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "customerId", nullable = false)
+    @JoinColumn(name = "customerId",referencedColumnName = "customerID", nullable = false)
     private CustomerEntity customer; //To avoid error
 
     private LocalDate date;
