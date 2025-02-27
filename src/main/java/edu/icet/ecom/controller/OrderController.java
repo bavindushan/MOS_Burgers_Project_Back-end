@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/order")
 @RequiredArgsConstructor
@@ -24,5 +26,10 @@ public class OrderController {
     @PutMapping("/update")
     public void updateOrder(@RequestBody Order order){
         service.updateOrder(order);
+    }
+
+    @GetMapping("/getAll")
+    public List<Order> getAll(){
+        return service.getAll();
     }
 }

@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
@@ -22,5 +25,14 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void updateOrder(Order order) {
         repository.save(mapper.map(order, OrderEntity.class));
+    }
+
+    @Override
+    public List<Order> getAll() {
+        List<OrderEntity> all = repository.findAll();
+        List<Order> list = new ArrayList<>();
+
+        all.forEach(orderEntity -> list.add(mapper.map(orderEntity,Order.class)));
+        return list;
     }
 }
