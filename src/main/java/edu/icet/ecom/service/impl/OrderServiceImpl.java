@@ -35,4 +35,9 @@ public class OrderServiceImpl implements OrderService {
         all.forEach(orderEntity -> list.add(mapper.map(orderEntity,Order.class)));
         return list;
     }
+
+    @Override
+    public void deleteOrder(Integer id) {
+        repository.deleteById(id);
+    }
 }

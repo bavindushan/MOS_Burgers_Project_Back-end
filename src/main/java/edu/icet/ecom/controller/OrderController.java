@@ -32,4 +32,9 @@ public class OrderController {
     public List<Order> getAll(){
         return service.getAll();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteOrder(@PathVariable Integer id){
+        service.deleteOrder(id);
+    }
 }
