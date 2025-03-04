@@ -20,12 +20,14 @@ public class OrderItemEntity {
     //@ManyToOne
     //@JoinColumn(name = "orderId",referencedColumnName = "id",nullable = false)
     //private OrderEntity order;
+    @Column(nullable = false)
     private Integer orderId;
 
     //@OneToOne
     //@JoinColumn(name = "productID", referencedColumnName = "id",nullable = false)
     //private ProductEntity product;
-    private String productId;
+    @Column(nullable = false)
+    private Integer productId;
 
     private Integer qty;
     private Double price;

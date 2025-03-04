@@ -32,14 +32,14 @@ public class ProductController {
         service.updateProduct(product);
     }
 
-    @DeleteMapping("/delete/{itemCode}")
-    public void deleteProduct(@PathVariable String itemCode){
-        service.deleteProduct(itemCode);
+    @DeleteMapping("/delete/{id}")
+    public void deleteProduct(@PathVariable Integer id){
+        service.deleteProduct(id);
     }
 
-    @GetMapping("/searchById/{itemCode}")
-    public Product searchById(@PathVariable String itemCode){
-        return service.searchById(itemCode);
+    @GetMapping("/searchById/{id}")
+    public Product searchById(@PathVariable Integer id){
+        return service.searchById(id);
     }
 
     @GetMapping("/searchByName/{name}")

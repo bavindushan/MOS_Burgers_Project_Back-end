@@ -14,7 +14,8 @@ import lombok.ToString;
 @Table(name = "product")
 public class ProductEntity {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(unique = true)
     private String name;
@@ -25,10 +26,4 @@ public class ProductEntity {
     private Double discount;
     private String img;
 
-//    "itemCode",
-//    "name",
-//    "categoryId",
-//    "price",
-//    "discount",
-//    "img"
 }

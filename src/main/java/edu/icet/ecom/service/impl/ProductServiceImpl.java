@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(Product product) {
-        product.setId(generateId(product.getCategoryId()));
+        //product.setId(generateId(product.getCategoryId()));
         repository.save(mapper.map(product, ProductEntity.class));
     }
 
@@ -42,13 +42,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProduct(String itemCode) {
-        repository.deleteById(itemCode);
+    public void deleteProduct(Integer id) {
+        repository.deleteById(String.valueOf(id));
     }
 
     @Override
-    public Product searchById(String itemCode) {
-        return mapper.map(repository.findById(itemCode), Product.class);
+    public Product searchById(Integer id) {
+        return mapper.map(repository.findById(String.valueOf(id)), Product.class);
 
     }
 
@@ -59,14 +59,14 @@ public class ProductServiceImpl implements ProductService {
         return map;
     }
 
-    private String generateId(String categoryID){
-        Optional<ProductEntity> lastProduct = repository.findTopByOrderByIdDesc();
-
-        if (lastProduct.isPresent()){
-            String itemCode = lastProduct.get().getId();
-            int num = Integer.parseInt(itemCode.substring(1))+1;
-            return String.format("%s%03d", categoryID, num);
-
-        }else return categoryID+"001";
-    }
+//    private String generateId(String categoryID){
+//        Optional<ProductEntity> lastProduct = repository.findTopByOrderByIdDesc();
+//
+//        if (lastProduct.isPresent()){
+//            String itemCode = lastProduct.get().getId();
+//            int num = Integer.parseInt(itemCode.substring(1))+1;
+//            return String.format("%s%03d", categoryID, num);
+//
+//        }else return categoryID+"001";
+//    }
 }
