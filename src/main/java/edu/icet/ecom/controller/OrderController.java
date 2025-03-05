@@ -19,8 +19,9 @@ public class OrderController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addOrder(@RequestBody Order order){
-        service.addOrder(order);
+    public Integer addOrder(@RequestBody Order order){
+        Order savedOrder = service.addOrder(order);
+        return savedOrder.getId();
     }
 
     @PutMapping("/update")
